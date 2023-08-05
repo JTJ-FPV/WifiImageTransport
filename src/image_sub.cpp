@@ -29,7 +29,10 @@ int main(int argc, char  **argv)
 {
     ros::init(argc, argv, "ImageSub");
     ros::NodeHandle nh;
-    std::string image_sub_topic = "/monocamera/image/compressed";
+    // MonoCamera
+    // std::string image_sub_topic = "/monocamera/image/compressed";
+    // D435i
+    std::string image_sub_topic = "/camera/color/image_raw/compressed";
     ros::Subscriber image_sub = nh.subscribe<sensor_msgs::CompressedImage>(image_sub_topic, 1, CompressImagecb);
     cv::namedWindow(WINDOW);
     cv::startWindowThread();
